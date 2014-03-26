@@ -1,0 +1,41 @@
+titre: 'Listes de diffusion'
+description: "Un sélecteur permettant de choisir parmi les listes de diffusion du site."
+icone: 'prive/themes/spip/images/newsletter-24.png'
+options:
+  -
+    saisie: 'fieldset'
+    options:
+      nom: 'description'
+      label: '<:saisies:option_groupe_description:>'
+    saisies:
+      -
+        saisie: 'input'
+        options:
+          nom: 'label'
+          label: '<:saisies:option_label_label:>'
+          explication: '<:saisies:option_label_explication:>'
+          size: 50
+      -
+        saisie: 'listes_de_diffusion'
+        options:
+          nom: 'listes_proposees'
+          label: 'Les listes de diffusion qui seront proposées.'
+          size: 50
+      -
+        saisie: 'listes_de_diffusion'
+        options:
+          nom: 'defaut'
+          label: '<:saisies:option_defaut_label:>'
+          size: 50
+      -
+        saisie: 'input'
+        options:
+          nom: 'explication'
+          label: '<:saisies:option_explication_label:>'
+          explication: '<:saisies:option_explication_explication:>'
+          size: 50
+defaut:
+  options:
+    label: 'listes de diffusion'
+  # champs extras (definition du champ sql)
+  sql: "text DEFAULT '' NOT NULL"

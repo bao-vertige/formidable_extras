@@ -1,0 +1,31 @@
+<div class="calendriermini"><div id='#ENV{nom}_picker'></div></div>
+<textarea name='#ENV{nom}' id='#ENV{nom}'>#ENV{valeur}</textarea>
+
+<style type="text/css">
+ ##ENV{nom}_picker {
+   max-width: 250px;
+ }
+ ##ENV{nom}_picker .ui-datepicker-calendar .ui-state-highlight {
+   height: auto;
+ }
+</style>
+
+<script type="text/javascript">
+ $(function () {
+   $.getScript('#CHEMIN{prive/javascript/ui/jquery.ui.datepicker.js}', function () {
+     $.getScript('#CHEMIN{javascript/jquery-ui.multidatespicker.js}',function(){
+	     var multidate_picker_options = {altField: '##ENV{nom}'};
+	     /**
+	      * Multidatepicker n'aime pas un array vide apparemment
+	      */
+	     if($('##ENV{nom}').html() != ""){
+		     multidate_picker_options.addDates = jQuery('##ENV{nom}').html().split(',');
+	     }
+	     $('##ENV{nom}_picker')
+		       .multiDatesPicker(multidate_picker_options)
+       	   .addClass('.pickable'); // une seule fois;
+	     $('##ENV{nom}').attr("readonly","readonly");
+     });
+   });
+ });
+</script>

@@ -1,0 +1,24 @@
+[(#REM)
+    Une saisies pour choisir un ou plusieurs newsletters parmi celle
+    définies par le plugin mailsubscribers.
+
+    options :
+        - listes_proposees : la ou les listes qui seront proposees dans
+                             la saisie. Toutes les listes si non-spécifié.
+                             Un tableau de la forme #ARRAY{0, id_liste_1,
+                                                           1, id_liste_2}
+
+]
+
+#SET{name,#ENV{nom}}#SET{defaut,''}
+[(#SET{listes_proposees, #ENV{listes_proposees}|detailler_listes
+                             |sinon{#CONFIG{mailsubscribers/lists}}})]
+
+<BOUCLE_listes(POUR){tableau #GET{listes_proposees}}>
+
+  #SET{val,#VALEUR{id}}
+	<div class="choix">
+		<input type="checkbox" name="#GET{name}#EVAL{chr(91)}#EVAL{chr(93)}" class="checkbox" id="#GET{name}_#GET{val}" value="#GET{val}"[(#GET{val}|in_any{#ENV{valeur}}|oui)checked="checked"] />
+		<label for="#GET{name}_#GET{val}">#VALEUR{titre}</label>
+	</div>
+</BOUCLE_listes>

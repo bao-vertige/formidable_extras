@@ -1,0 +1,23 @@
+<paquet
+	prefix="formidable_extras"
+	categorie="outil"
+	version="1.0.0"
+	etat="test"
+	compatibilite="[3.0.16;3.0.*]"
+	logo=""
+	documentation=""
+>
+	<!--
+		Paquet genere le 2014-03-26 11:35:15
+	-->
+
+	<nom>Extras Formidable</nom>
+
+	<auteur>Michel @ Vertige ASBL</auteur>
+
+	<licence>GNU/GPL</licence>
+
+  <necessite nom="formidable" compatibilite="[1.9.1;[" />
+  <necessite nom="mailsubscribers" compatibilite="[1.4.2;[" />
+
+</paquet>

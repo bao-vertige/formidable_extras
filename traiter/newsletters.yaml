@@ -1,0 +1,17 @@
+titre: 'Inscription aux newsletters'
+description: 'inscrire une adresse mail saisie à une ou plusieurs listes de diffusion'
+options:
+  -
+    saisie: 'champ'
+    options:
+      nom: 'champ_adresse_inscrite'
+      label: "Champ contenant l'adresse mail à inscrire"
+      forcer_type: [input]
+      env: true
+  -
+    saisie: 'champ'
+    options:
+      nom: "champ_listes"
+      label: "Le champ qui permet de choisir les listes auxquelles on va abonner"
+      forcer_type: [listes_de_diffusion]
+      env: true

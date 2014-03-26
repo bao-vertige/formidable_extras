@@ -1,0 +1,40 @@
+titre: 'multidate'
+description: "Un selecteur de date permettant d'en choisir plusieures"
+icone: 'images/saisies_date.png'
+options:
+  -
+    saisie: 'fieldset'
+    options:
+      nom: 'description'
+      label: '<:saisies:option_groupe_description:>'
+    saisies:
+      -
+        saisie: 'input'
+        options:
+          nom: 'label'
+          label: '<:saisies:option_label_label:>'
+          explication: '<:saisies:option_label_explication:>'
+          size: 50
+      -
+        saisie: 'input'
+        options:
+          nom: 'defaut'
+          label: '<:saisies:option_defaut_label:>'
+          size: 50
+      -
+        saisie: 'input'
+        options:
+          nom: 'explication'
+          label: '<:saisies:option_explication_label:>'
+          explication: '<:saisies:option_explication_explication:>'
+          size: 50
+defaut:
+  options:
+    label: '<:saisies:saisie_date_titre:>'
+    size: 40
+    # champs extras (definition du champ sql)
+    sql: "text DEFAULT '' NOT NULL"
+#  verifier:
+#    type: 'date'
+#    options:
+#      normaliser: 'datetime'

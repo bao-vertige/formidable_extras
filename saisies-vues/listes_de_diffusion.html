@@ -1,0 +1,11 @@
+[(#SET{listes, #ENV{valeur}|detailler_listes})]
+
+<B_choix>
+<ul>
+	<BOUCLE_choix(POUR){tableau #GET{listes}}>
+    [<li class="choix">(#VALEUR|table_valeur{titre})</li>]
+	</BOUCLE_choix>
+
+    [<li class="choix"><em>#ENV{choix_alternatif_label}</em> : (#GET{valeur}|table_valeur{choix_alternatif})</li>]
+    </ul>
+</B_choix>
