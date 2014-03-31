@@ -18,7 +18,7 @@
 
   #SET{val,#VALEUR{id}}
 	<div class="choix">
-		<input type="checkbox" name="#GET{name}#EVAL{chr(91)}#EVAL{chr(93)}" class="checkbox" id="#GET{name}_#GET{val}" value="#GET{val}"[(#GET{val}|in_any{#ENV{valeur}}|oui)checked="checked"] />
-		<label for="#GET{name}_#GET{val}">#VALEUR{titre}</label>
+		<input type="checkbox" name="#GET{name}#EVAL{chr(91)}#EVAL{chr(93)}" class="checkbox" id="#GET{name}_[(#GET{val}|replace{:,''})]" value="#GET{val}"[(#GET{val}|in_any{#ENV{valeur}}|oui)checked="checked"] />
+		<label for="#GET{name}_[(#GET{val}|replace{:, ''})]">#VALEUR{titre}</label>
 	</div>
 </BOUCLE_listes>
