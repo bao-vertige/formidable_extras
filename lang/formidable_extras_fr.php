@@ -7,6 +7,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// F
 	'formidable_extras_titre' => 'Extras Formidable',
-);
 
-?>
+    // Erreur
+    'erreur_limite_inscription' => "La limite d'inscription pour ce formulaire a été atteinte."
+);
