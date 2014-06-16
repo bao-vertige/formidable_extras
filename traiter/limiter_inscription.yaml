@@ -1,9 +1,0 @@
-titre: "Limiter le nombre d'inscription"
-description: 'Limiter le nombre de réponse validée de ce formulaire'
-options:
-  -
-    saisie: 'input'
-    options:
-      nom: 'limite'
-      label: "Nombre d'inscription"
-      env: true
