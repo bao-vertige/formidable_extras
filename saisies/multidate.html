@@ -8,6 +8,12 @@
  ##ENV{nom}_picker .ui-datepicker-calendar .ui-state-highlight {
    height: auto;
  }
+
+[(#ENV{cacher}|oui)
+ ##ENV{nom} {
+   display: none;
+ }
+]
 </style>
 
 <script type="text/javascript">
