@@ -1,0 +1,19 @@
+[(#REM) Saisie email qui affiche une adresse mail ou une liste d'adresse mail dans un mailto ]
+
+[(#REM) On place ENV dans un variable qu'on peu manipuler ]
+#SET{mails, #ENV{valeur}}
+
+[(#REM) On fait un explode de la chaine si ce n'est pas déjà un tableau]
+[(#GET{mails}|is_array|non)
+  [(#SET{mails, #GET{mails}|explode{','}})]
+]
+
+<B_adresse_mail>
+  <ul>
+    <BOUCLE_adresse_mail(DATA){source table, #GET{mails}}{si #GET{mails}|count|>{1}|oui}>
+      [<li><a [href="mailto:(#VALEUR|trim)"] [title="(#VALEUR|attribut_html)"]>(#VALEUR)</a></li>]
+    </BOUCLE_adresse_mail>
+  </ul>
+</B_adresse_mail>
+[<a [href="mailto:(#ENV{valeur}|trim)"] [title="(#ENV{valeur}|attribut_html)"]>(#ENV{valeur})</a>]
+<//B_adresse_mail>
