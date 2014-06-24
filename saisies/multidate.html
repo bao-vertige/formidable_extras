@@ -1,4 +1,5 @@
 <div class="calendriermini"><div id='#ENV{nom}_picker'></div></div>
+
 <textarea name='#ENV{nom}' id='#ENV{nom}'>#ENV{valeur}</textarea>
 
 <style type="text/css">
@@ -24,8 +25,8 @@
 	     /**
 	      * Multidatepicker n'aime pas un array vide apparemment
 	      */
-	     if($('##ENV{nom}').html() != ""){
-		     multidate_picker_options.addDates = jQuery('##ENV{nom}').html().split(',');
+	     if($('##ENV{nom}').val() != ""){
+		     multidate_picker_options.addDates = jQuery('##ENV{nom}').val().split(',');
 	     }
 	     $('##ENV{nom}_picker')
 		       .multiDatesPicker(multidate_picker_options)
