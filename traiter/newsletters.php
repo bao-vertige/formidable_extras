@@ -8,7 +8,7 @@ function traiter_newsletters_dist($args, $retours){
     $options = $args['options'];
 
     $adresse_mail = _request($options['champ_adresse_inscrite']);
-    $listes = _request($options['listes_de_diffusion']);
+    $listes = _request($options['champ_listes']);
 
     $subscribe = charger_fonction('subscribe', 'newsletter');
     $subscribe($adresse_mail, array('listes' => $listes));
